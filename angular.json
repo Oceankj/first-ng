@@ -101,7 +101,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "oceankj.github.io",
+            "baseHref": "https://oceankj.github.io/first-ng/",
             "name": "oceankj",
             "email": "0980124jim@gmail.com"
           }
