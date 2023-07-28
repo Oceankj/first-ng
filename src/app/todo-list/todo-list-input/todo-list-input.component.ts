@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-todo-list-input',
   templateUrl: './todo-list-input.component.html',
-  styleUrls: ['./todo-list-input.component.css']
+  styleUrls: ['./todo-list-input.component.css'],
 })
 export class TodoListInputComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  inputValue = '';
+  @Output() addTaskEvent = new EventEmitter<string>();
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  addTask() {
+    if (this.inputValue === '') {
+      alert('You must write something!');
+      return;
+    }
+    this.addTaskEvent.emit(this.inputValue);
+    this.inputValue = '';
   }
-
 }

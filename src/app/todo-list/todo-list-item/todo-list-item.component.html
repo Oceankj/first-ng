@@ -1,1 +1,8 @@
-<p>todo-list-item works!</p>
+<li [class]="state | liClass" (click)="toggleTask()">
+  {{ content }}
+  <span
+    class="close"
+    [innerHTML]="cancelIcon"
+    (click)="$event.stopPropagation(); closeTask()"
+  ></span>
+</li>

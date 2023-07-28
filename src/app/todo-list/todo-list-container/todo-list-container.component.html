@@ -1,1 +1,10 @@
-<p>todo-list-container works!</p>
+<app-todo-list-input (addTaskEvent)="addTask($event)"></app-todo-list-input>
+<ul>
+  <app-todo-list-item
+    *ngFor="let task of todoList | filterCancelTask"
+    [taskId]="task.id"
+    [content]="task.content"
+    [state]="task.state"
+    (onTaskStateChange)="changeTaskState($event)"
+  ></app-todo-list-item>
+</ul>
